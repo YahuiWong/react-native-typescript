@@ -3,11 +3,13 @@ import {
     StyleSheet,
     Text,
     View,
+    Button,
     Platform
 } from "react-native";
 interface Props {
 }
 interface State {
+    count:number;
 }
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,12 +18,24 @@ const instructions = Platform.select({
       'Shake or press menu button for dev menu',
   });
 export default class App extends Component<Props, State> {
+    constructor(props:Props)
+    { 
+        super(props);
+        this.state={count:0};
+       
+    }
+    add = ()=>{
+
+        this.setState({count:this.state.count+1})
+    };
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native&typescript!</Text>
                 <Text style={styles.instructions}>To get started, edit src/App.js</Text>
                 <Text style={styles.instructions}>{instructions}</Text>
+                <Text style={styles.instructions}>{this.state.count}</Text>
+                <Button  onPress={this.add}  title="add" ></Button>
             </View>
         );
     }
