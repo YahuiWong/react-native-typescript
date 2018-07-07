@@ -6,3 +6,11 @@ how  to init your typescript
 * yarn add @types/react-native @types/react react-native-typescript-transformer  typescript -D
 
 * update package.json script "start": "react-native start --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx"
+
+add redux
+
+* yarn add react-redux redux
+
+* yarn add @types/redux @types/react-redux -D
+
+* ……
