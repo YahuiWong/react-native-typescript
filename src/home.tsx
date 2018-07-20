@@ -30,7 +30,7 @@ class Home extends Component<Props, State> {
         this.props.dispatch(add())
     };
     _addSync=()=>{
-        addSync(this.props.dispatch)
+        this.props.dispatch(addSync())
         // setTimeout(() => {
         //     this.props.dispatch(add())
         // }, 1000);
