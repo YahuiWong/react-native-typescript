@@ -4,7 +4,7 @@ let {create} = require("dva-core");
 export { connect };
 export interface Options {
   models: Model[];
-  extraReducers?: any;
+  extraReducers: any;
   initialState: any;
   onError: (e: any) => void;
   onAction: any[];
@@ -16,6 +16,7 @@ export function dva(options: Options) {
 //   if (!global.registered)
   options.models.forEach((model: Model) => app.model(model));
 //   global.registered = true
+
   app.start();
   // eslint-disable-next-line no-underscore-dangle
   const store = app._store;

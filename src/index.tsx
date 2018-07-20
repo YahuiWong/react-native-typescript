@@ -1,21 +1,26 @@
 import React from 'react';
 import { AppRegistry, AsyncStorage } from 'react-native';
+// import SImmutable from 'seamless-immutable';
+
 import {createLogger} from 'redux-logger';
-import {dva}from './utils/dva'
-import count from './models/count'
-import Home from './routes/Home';
+import {dva , Model} from './utils/dva';
+import Router, { routerMiddleware, routerReducer } from './router'
+import * as models from './models';
+
+let initState = {};
+
 const app = dva({
-    initialState: {},
-    models: [count],
-    extraReducers: {},
+    initialState: initState,
+    models: Object.values(models),
+    extraReducers: { router: routerReducer },
     // models:[m],
     onError(e: any) {
         console.error('onError', e);
     },
-    onAction: [createLogger({collapsed: true})],
+    onAction: [createLogger({collapsed: true}), routerMiddleware],
 
 });
-const App = app.start(<Home />)
-
+// registerModels(app)
+const App = app.start(<Router />);
 
 export default App;

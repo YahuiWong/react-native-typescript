@@ -4,16 +4,23 @@ import {
     Text,
     View
 } from "react-native";
+import { NavigationScreenProps } from "react-navigation";
 interface Props {
 }
-interface State {
-}
-export default class App extends Component<Props, State> {
+type IPropsDetail = NavigationScreenProps&Props;
+export default class Detail extends Component<IPropsDetail> {
+    static navigationOptions = {
+        title: 'Detail',
+      };
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>
                     Welcome to React Native!
+                </Text>
+                <Text style={styles.text}>
+                    Detail from {this.props.navigation.state.params.from}
                 </Text>
             </View>
         );
