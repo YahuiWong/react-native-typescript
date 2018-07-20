@@ -29,6 +29,9 @@ class Home extends Component<Props, State> {
 
         this.props.dispatch(add())
     };
+    _addSync=()=>{
+        this.props.dispatch({type:"addSync"})
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -37,6 +40,7 @@ class Home extends Component<Props, State> {
                 <Text style={styles.instructions}>{instructions}</Text>
                 <Text style={styles.instructions}>{this.props.count}</Text>
                 <Button  onPress={this._add}  title="add" ></Button>
+                <Button  onPress={this._addSync}  title="addSync" ></Button>
             </View>
         );
     }

@@ -509,6 +509,12 @@
   dependencies:
     csstype "^2.2.0"
 
+"@types/redux-saga@^0.10.5":
+  version "0.10.5"
+  resolved "http://registry.npm.taobao.org/@types/redux-saga/download/@types/redux-saga-0.10.5.tgz#80bf21078379ebc97387dbe56e44467b5677fa85"
+  dependencies:
+    redux-saga "*"
+
 "@types/redux@^3.6.0":
   version "3.6.0"
   resolved "http://registry.npm.taobao.org/@types/redux/download/@types/redux-3.6.0.tgz#f1ebe1e5411518072e4fdfca5c76e16e74c1399a"
@@ -4320,6 +4326,10 @@ realpath-native@^1.0.0:
   resolved "http://registry.npm.taobao.org/realpath-native/download/realpath-native-1.0.1.tgz#07f40a0cce8f8261e2e8b7ebebf5c95965d7b633"
   dependencies:
     util.promisify "^1.0.0"
+
+redux-saga@*, redux-saga@^0.16.0:
+  version "0.16.0"
+  resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.16.0.tgz#0a231db0a1489301dd980f6f2f88d8ced418f724"
 
 redux@*, redux@^4.0.0:
   version "4.0.0"
