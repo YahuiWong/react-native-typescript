@@ -7,7 +7,7 @@ import {
   Platform
 } from 'react-native';
 import { connect, DispatchProp } from 'react-redux';
-import { add } from './actions';
+import { add,addSync } from './actions';
 import {CounterState} from './statesTypes';
 
 interface State {
@@ -29,6 +29,12 @@ class Home extends Component<Props, State> {
 
         this.props.dispatch(add())
     };
+    _addSync=()=>{
+        addSync(this.props.dispatch)
+        // setTimeout(() => {
+        //     this.props.dispatch(add())
+        // }, 1000);
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -37,6 +43,7 @@ class Home extends Component<Props, State> {
                 <Text style={styles.instructions}>{instructions}</Text>
                 <Text style={styles.instructions}>{this.props.count}</Text>
                 <Button  onPress={this._add}  title="add" ></Button>
+                <Button  onPress={this._addSync}  title="addSync" ></Button>
             </View>
         );
     }
