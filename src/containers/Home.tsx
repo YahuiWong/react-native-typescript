@@ -11,6 +11,7 @@ import { NavigationActions } from '../utils';
 import { connect } from '../utils/dva';
 import { countState } from '../models/states';
 import * as RouterName from '../types/const/router';
+import { Button as AntButton} from 'antd-mobile-rn';
 interface Props {
     count: countState;
     dispatch?: any;
@@ -36,6 +37,7 @@ class Home extends Component<IPropsHome> {
                 <Text style={styles.text}>
                     Count: {this.props.count}
                 </Text>
+                <AntButton>Ant Design</AntButton>
                 <Button title="+" onPress={() => { this.props.dispatch({ type: 'count/add' }); }} />
                 <Button title="-" onPress={() => { this.props.dispatch({ type: 'count/minus' }); }} />
                 <Button title="+ async" onPress={() => { this.props.dispatch({ type: 'count/addWithDelay' }); }} />
